@@ -1,0 +1,21 @@
+.login {
+  position: relative;
+  height: 100%;
+}
+.loginScreen_Logo {
+  position: fixed;
+  left: 0;
+  width: 150px;
+  object-fit: contain;
+  padding-left: 20px;
+}
+.login_btn {
+  position: fixed;
+  right: 20px;
+  top: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  font-size: 1rem;
+  background-color: #e50914;
+  border: none;
+}
