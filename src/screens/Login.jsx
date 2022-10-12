@@ -14,7 +14,7 @@ const Login = () => {
           alt=""
         />
         <button className="login_btn" onClick={() => setsignIn(true)}>
-          Sign In{" "}
+          Sign In
         </button>
         <div className="loginScreenGradient"></div>
         {/* extra div is added here like a trick to provide the height of the above container  */}

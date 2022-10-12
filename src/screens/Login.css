@@ -14,7 +14,9 @@
 }
 .loginScreenBody {
   /* to specify the margin 0 auto the width of the container mush be specified */
-  width: 100%;
+  /* width: 100%; */
+  left: 0;
+  right: 0;
   position: absolute;
   top: 30%;
   color: #fff;

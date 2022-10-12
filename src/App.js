@@ -9,7 +9,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import "./App.css";
-import Login from "./Login.jsx";
+import Login from "./screens/Login.jsx";
 
 function App() {
   const user = null;

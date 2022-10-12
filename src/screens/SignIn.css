@@ -1,0 +1,41 @@
+.signIn {
+  max-width: 300px;
+  padding: 70px;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.85);
+}
+.signIn > form {
+  display: grid;
+  flex: column;
+}
+.signIn > form > input {
+  outline-width: 0;
+  height: 40px;
+  margin-bottom: 14px;
+  padding: 5px 15px;
+  border: none;
+  border-radius: 5px;
+}
+.signIn > form > button {
+  padding: 16px 20px;
+  color: #fff;
+  background-color: #e50914;
+  cursor: pointer;
+  font-weight: 600;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+.signIn > form > h1 {
+  text-align: center;
+  margin-bottom: 25px;
+}
+.signIn > form > h4 {
+  margin-top: 25px;
+}
+.inputSignIn {
+  color: gray;
+}
+.inputLoginLink {
+  cursor: pointer;
+  text-decoration: underline;
+}
