@@ -20,7 +20,20 @@ const SignIn = () => {
       });
     e.preventDefault();
   };
-  const signInFunc = (e) => {};
+  const signInFunc = (e) => {
+    auth
+      .signInWithEmailAndPassword(
+        emailRef.current.value,
+        passwordRef.current.value
+      )
+      .then((authUser) => {
+        console.log(authUser);
+      })
+      .catch((error) => {
+        alert(error.message);
+      });
+    e.preventDefault();
+  };
   return (
     <div className="signIn">
       <form action="">
