@@ -7,11 +7,14 @@ import "./Banner.css";
 
 const Banner = () => {
   const [movie, setMovie] = useState([]);
+  // IS USED TO FETCH THE BANNER THROUGH THE API
   useEffect(() => {
     async function fetchData() {
       const request = await axios.get(requests.fetchNetflixOriginals);
       setMovie(
         request.data.results[
+          // IS USED TO RANDOMISE THE BANNER AFTER FETCHING THE DATA FROM THE API
+
           Math.floor(Math.random() * request.data.results.length - 1)
         ]
       );
@@ -20,6 +23,9 @@ const Banner = () => {
     fetchData();
   }, []);
   console.log(movie);
+
+  // TRUNCATE FUNCTION IS USED TO CUT THE LONG STRING INTO THE SHORT BY ADDING ... AT THE END
+
   function truncate(string, n) {
     return string?.length > n ? string.substr(0, n - 1) + "..." : string;
   }
