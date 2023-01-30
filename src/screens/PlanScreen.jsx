@@ -32,31 +32,35 @@ const PlanScreen = () => {
   }, []);
   //   console.log(products);
   const loadCheckout = async (priceId) => {
-    const docRef = await db
-      .collection("customers")
-      .doc(user.uid)
-      .collection("checkout sessions")
-      .add({
-        price: priceId,
-        success_url: window.location.origin,
-        cancel_url: window.location.origin,
+    try {
+      const docRef = await db
+        .collection("customers")
+        .doc(user.uid)
+        .collection("checkout sessions")
+        .add({
+          price: priceId,
+          success_url: window.location.origin,
+          cancel_url: window.location.origin,
+        });
+      docRef.onSnapshot(async (snap) => {
+        const { error, sessionId } = snap.data();
+        if (error) {
+          //Show an error to your customer and
+          // inspect your Cloud Function logs in the Firebase console
+          alert(`An error occured : ${error.message}`);
+        }
+        if (sessionId) {
+          // We have a session , let's redirect to the checkout
+          // Init Stripe
+          const stripe = await loadStripe(
+            "pk_test_51LquVQSB3xWfkoOtkVj984h6snHmzCwhtwbasPcVQKOPKZMoKz45UUM53u1VnHtJ1Op2x1JAYbXwvKUG9LWol7gm00JkagfZMc"
+          );
+          stripe.redirectToCheckout({ sessionId });
+        }
       });
-    docRef.onSnapshot(async (snap) => {
-      const { error, sessionId } = snap.data();
-      if (error) {
-        //Show an error to your customer and
-        // inspect your Cloud Function logs in the Firebase console
-        alert(`An error occured : ${error.message}`);
-      }
-      if (sessionId) {
-        // We have a session , let's redirect to the checkout
-        // Init Stripe
-        const stripe = await loadStripe(
-          "pk_test_51LquVQSB3xWfkoOtkVj984h6snHmzCwhtwbasPcVQKOPKZMoKz45UUM53u1VnHtJ1Op2x1JAYbXwvKUG9LWol7gm00JkagfZMc"
-        );
-        stripe.redirectToCheckout({ sessionId });
-      }
-    });
+    } catch (error) {
+      console.log("this is an error", error);
+    }
   };
 
   return (
@@ -68,7 +72,13 @@ const PlanScreen = () => {
               <h5>{productData.name}</h5>
               <h6>{productData.description}</h6>
             </div>
-            <button onClick={() => loadCheckout(productData.prices.priceId)}>
+            <button
+              onClick={() => {
+                console.log(productData.prices?.priceId);
+                // loadCheckout(productData.prices?.priceId);
+                loadCheckout("price_1LsngSSB3xWfkoOtRRd29wAC");
+              }}
+            >
               Subscribe
             </button>
           </div>
