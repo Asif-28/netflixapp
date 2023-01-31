@@ -18,10 +18,7 @@ const Navbar = () => {
   }, []);
   return (
     <div className={`nav ${show && `nav__black`}`}>
-      <div
-        className="container"
-        style={{ maxWidth: "1280px", margin: "0 auto" }}
-      >
+      <div className="container">
         <img
           onClick={() => navigate("/")}
           className="navbarLogo"
