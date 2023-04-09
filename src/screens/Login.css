@@ -65,6 +65,7 @@
 }
 .loginScreenInput {
   margin: 20px;
+  
 }
 .loginScreenInput > form > input {
   padding: 10px;
@@ -86,4 +87,42 @@
   background-color: #e50914;
   font-weight: 600;
   cursor: pointer;
+}
+
+@media all and (max-width: 500px) {
+  .loginScreenBody {
+    left: 0;
+    right: 0;
+    position: absolute;
+    top: 10%;
+    color: #fff;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 1;
+    text-align: center;
+  
+    padding: 20px;
+  }  
+  .inputBtn {
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    padding: 11px 10px;
+    font-size: .8rem;
+    border: none;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: 500;
+    cursor: pointer;
+  }
+  .loginScreenInput > form > input {
+    padding: 10px;
+    /* outline-width here is used to remove the blue line from the input element */
+    outline-width: 0;
+    height: 15px;
+    width: 30%;
+    border: none;
+    max-width: 600px;
+  }
+
 }

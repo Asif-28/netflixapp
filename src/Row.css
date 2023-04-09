@@ -33,6 +33,9 @@
   .row{
     margin: 0;
   }
+  .row > h2 {
+    margin: 5px;
+  }
   .posters{
     padding: 10px 5px;
 
