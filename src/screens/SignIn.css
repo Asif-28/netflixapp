@@ -39,3 +39,10 @@
   cursor: pointer;
   text-decoration: underline;
 }
+
+@media all and (max-width: 500px) {
+  .signIn{
+    margin-top: 50px;
+    padding: 30px;
+  }
+}
