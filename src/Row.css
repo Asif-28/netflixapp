@@ -5,7 +5,7 @@
 .posters {
   display: flex;
   overflow-y: hidden;
-  overflow-x: scroll;
+  overflow-x: scroll !important;
   padding: 20px;
 }
 .posters::-webkit-scrollbar {
@@ -27,4 +27,15 @@
 }
 .posterLarge:hover {
   transform: (scale(1.09));
+}
+
+@media all and (max-width: 500px) {
+  .row{
+    margin: 0;
+  }
+  .posters{
+    padding: 10px 5px;
+
+  }
+  
 }

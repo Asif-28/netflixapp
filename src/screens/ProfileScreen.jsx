@@ -1,6 +1,6 @@
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import {  useSelector } from "react-redux";
+import {  useNavigate } from "react-router-dom";
 import { logout, selectUser } from "../features/userSlice";
 import { auth } from "../firebase";
 import Navbar from "../Navbar";
@@ -9,7 +9,7 @@ import "./ProfileScreen.css";
 
 const ProfileScreen = () => {
   const navigate = useNavigate();
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
   const user = useSelector(selectUser);
   console.log(user.user.email);
   return (

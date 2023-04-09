@@ -1,6 +1,7 @@
 .pfScreen {
   color: #fff;
   height: 100vh;
+  
 }
 
 .pfBody {
@@ -50,4 +51,20 @@
   background-color: #e50914;
   border: none;
   cursor: pointer;
+}
+
+@media all and (max-width: 500px) {
+  .pfScreen{
+    padding-top: 2rem;
+  }
+  .pfBody {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: 0 auto;
+    padding-top: 8%;
+    max-width: 800px;
+  }
+
+
 }
